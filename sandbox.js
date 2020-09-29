@@ -1,13 +1,17 @@
-const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 
-// const SALT = 'RANDOMLY_GENERATED';
-// const password = 'password';
-// const saltedPassword = `${SALT}${password}`;
+const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoic3BvdCIsImFnZSI6NCwid2VpZ2h0IjoiMjAgbGJzIiwiaWF0IjoxNjAxMzI5OTQzLCJleHAiOjE2MDEzNDQzNDN9.IDGN6Nueb7qCLUbLYbriVZGTfjVGsg--JfGkZmcXOw8';
+//sign
+// const token = jwt.sign({
+//   name: 'spot',
+//   age: 4,
+//   weight: '20 lbs'
+// }, 'supersecret', {
+//   expiresIn: '4h'
+// });
+//header + payload + supersecret
+console.log(token);
 
-const hash = '$2a$14$eA668o2OoXZEAHJhufLpxeFyB1fA4PNlPHX6Pd/wOTgwYDkhUZ6UW';
-
-bcrypt
-//   .hash('password', 14)
-//   .then(hash => console.log(hash));
-  .compare('password', hash)
-  .then(result => console.log(result));
+//verify
+const result = jwt.verify(token, 'supersecret');
+console.log(result);
