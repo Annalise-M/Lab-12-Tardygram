@@ -16,7 +16,7 @@ describe('Tardygram routes', () => {
         email: 'test@test.com',
         password: 'password'
       });
-console.log(response.body, 'fuckkkkkkkkkkkkkkkkkkkkkk');
+    console.log(response.body, 'fuckkkkkkkkkkkkkkkkkkkkkk');
     expect(response.body).toEqual({
       id: expect.any(String),
       email: 'test@test.com'
